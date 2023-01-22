@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel='stylesheet'>
+    <link href='https://css.gg/search.css' rel='stylesheet'>
+    <title>Document</title>
+    <style>
+        * {
+    Margin: 0;
+    Padding: 0;
+    Box-Sizing: Border-Box;
+    Font-Family: "Poppins", Sans-Serif;
+}
+
+Body {
+    Overflow: Hidden;
+}
+Section {
+    Display: Flex;
+    Min-Height: 100vh;
+    Align-Items: Center;
+    Justify-Content: Center;
+    Background: Linear-Gradient( #000039, #08090a);
+    background-position: 20% 80%;
+}
+Section .Colour {
+Position: Absolute;
+Filter: Blur(150px);
+}
+
+
+Section .Colour:nth-Child(1) {
+    Top: -350px;
+    Width: 600px;
+    Height: 600px;
+    Background: #110759;
+}
+
+Section .Colour:nth-Child(2) {
+    Left: 100px;
+    Width: 500px;
+    Height: 500px;
+    Bottom: -150px;
+    Background: #000000;
+}
+
+Section .Colour:nth-Child(3) {
+    Right: 100px;
+    Bottom: 50px;
+    Width: 300px;
+    Height: 300px;
+    Background: #2b67f3;
+}
+
+.Box {
+    Position: Relative;
+}
+
+.Box .Square {
+    Position: Absolute;
+    Border-Radius: 10px;
+    Backdrop-Filter: Blur(5px);
+    Background: rgba(70, 19, 190, 0.311);
+    Animation-Delay: Calc(-1s * Var(--I));
+    Animation: Animate 10s Linear Infinite;
+    Box-Shadow: 0 25px 45px Rgba(0, 0, 0, 0.1);
+    Border: 1px Solid Rgba(255, 255, 255, 0.5);
+    Border-Right: 1px Solid Rgba(255, 255, 255, 0.2);
+    Border-Bottom: 1px Solid Rgba(255, 255, 255, 0.2);
+}
+
+@Keyframes Animate {
+
+    0%,100%
+     {
+        Transform: TranslateY(-40px);
+    }
+
+    50% {
+        Transform: TranslateY(40px);
+    }
+    
+}
+
+.Box .Square:nth-Child(1) {
+    Top: -50px;
+    Left: -60px;
+    Width: 100px;
+    Height: 100px;
+}
+
+.Box .Square:nth-Child(2) {
+    Z-Index: 2;
+    Top: 150px;
+    Left: -100px;
+    Width: 120px;
+    Height: 120px;
+}
+
+.Box .Square:nth-Child(3) {
+    Z-Index: 2;
+    Width: 80px;
+    Height: 80px;
+    Right: -50px;
+    Bottom: -60px;
+}
+
+.Box .Square:nth-Child(4) {
+    Left: 100px;
+    Width: 50px;
+    Height: 50px;
+    Bottom: -80px;
+}
+
+.Box .Square:nth-Child(5) {
+    Top: -80px;
+    Left: 140px;
+    Width: 60px;
+    Height: 60px;
+}
+
+.Container {
+    Width: 400px;
+    Display: Flex;
+    Min-Height: 400px;
+    Position: Relative;
+    Border-Radius: 10px;
+    Align-Items: Center;
+    Justify-Content: Center;
+    Backdrop-Filter: Blur(5px);
+    Background: Rgba(255, 255, 255, 0.1);
+    Box-Shadow: 0 25px 45px Rgba(0, 0, 0, 0.1);
+    Border: 1px Solid Rgba(255, 255, 255, 0.5);
+    Border-Right: 1px Solid Rgba(255, 255, 255, 0.2);
+    Border-Bottom: 1px Solid Rgba(255, 255, 255, 0.2);
+}
+
+.Form {
+    Width: 100%;
+    Height: 100%;
+    Padding: 40px;
+    Position: Relative;
+}
+
+.Form H2 {
+    Color: #Fff;
+    Font-Size: 24px;
+    Font-Weight: 600;
+    Position: Relative;
+    Letter-Spacing: 1px;
+    Margin-Bottom: 40px;
+}
+
+.Form H2::Before {
+    Left: 0;
+    Width: 80px;
+    Height: 4px;
+    Content: "";
+    Bottom: -10px;
+    Background: #Fff;
+    Position: Absolute;
+}
+
+.Form .Input__box {
+    Width: 100%;
+    Margin-Top: 20px;
+}
+
+.Form .Input__box Input {
+    Width: 100%;
+    Color: #Fff;
+    Border: None;
+    Outline: None;
+    Font-Size: 16px;
+    Padding: 10px 20px;
+    Letter-Spacing: 1px;
+    Border-Radius: 35px;
+    Background: Rgba(255, 255, 255, 0.2);
+    Border: 1px Solid Rgba(255, 255, 255, 0.5);
+    Box-Shadow: 0 5px 15px Rgba(0, 0, 0, 0.05);
+    Border-Right: 1px Solid Rgba(255, 255, 255, 0.2);
+    Border-Bottom: 1px Solid Rgba(255, 255, 255, 0.2);
+}
+
+.Form::Placeholder {
+    Color: #Fff;
+}
+
+.Form .Input__box Input[Type="Submit"] {
+    Color: #666;
+    Cursor: Pointer;
+    Background: #Fff;
+    Max-Width: 100px;
+    Font-Weight: 600;
+    Margin-Bottom: 20px;
+}
+div{
+    margin-top: 20px;
+}
+.Forget {
+    Color: #Fff;
+    Margin: 10px;
+}
+
+.Forget A {
+    Color: rgb(176, 114, 0);
+    Font-Weight: 600;
+    Text-Decoration: None;
+}
+.Forget A:hover {
+    Color: rgb(231, 187, 107);
+}
+.login{
+   margin:10px; 
+}
+button{
+    background-color: rgb(255, 255, 255);
+    padding: 8px 18px;
+    border: none;
+    border-radius: 15px;
+    color: rgb(5, 80, 145);
+    
+}
+button:hover{
+    background-color: rgba(87, 70, 214, 0.368);
+    color:rgb(255, 255, 255);
+}
+    </style>
+</head>
+<body>
+    <Section id="particle-js">
+        <Div Class="Colour"></Div>
+        <Div Class="Colour"></Div>
+        <Div Class="Colour"></Div>
+        <Div Class="Box">
+            <Div Class="Square" Style="--I: 0"></Div>
+            <Div Class="Square" Style="--I: 1"></Div>
+            <Div Class="Square" Style="--I: 2"></Div>
+            <Div Class="Square" Style="--I: 3"></Div>
+            <Div Class="Square" Style="--I: 4"></Div>
+            <Div Class="Container">
+                <Div Class="Form">
+                    <H2>Sign Up Form</H2>
+                    <Form>
+                        <Div Class="Input__box">
+                            <Input Type="Text" Placeholder="Email" />
+                        </Div>
+                        <Div Class="Input__box">
+                            <Input Type="Text" Placeholder="Name" />
+                        </Div>
+                        <Div Class="Input__box">
+                            <Input Type="Password" Placeholder="Password" />
+                        </Div>
+                        <Div Class="Input__box">
+                            <Input Type="Password" Placeholder="Confirm Password" />
+                        </Div>
+                        <Div Class="login">
+                            <button><b>Sign Up</b></button>
+                        </Div>
+                        <div>
+                        {% comment %} <P Class="Forget">
+                            Forgot Password? <A Href="#">Click Here</A>
+                        </P> {% endcomment %}
+                        <P Class="Forget">
+                            Do You Have An Account? <A Href="login">Log in</A>
+                        </P>
+                        </div>
+                    </Form>
+                </Div>
+            </Div>
+        </Div>
+    </Section>
+</body>
+                        <script src="app.js"></script>
+                        <script src="particles.js"></script>
+</html>

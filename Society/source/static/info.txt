@@ -1,0 +1,6 @@
+Here,
+we are going to add all static files.
+
+
+
+

@@ -19,17 +19,21 @@ def signup_page(request):
 
         # now confirm the password
         if password1 == password2:
-            # data will be pushed into database
-            user = Member.create_user(name=name, email=email, password=password1)
+            # data will be pushed in Member and user both tables
+            member = Member(name=name, email=email)
+            member.save()
+
+            username = email[: len(email)-4]
+            user = User.objects.create_user(username=username, email=email, password=password1)
             user.save()
 
             # now redirect to login page
-            return redirect('Auth/signin')
+            return redirect('/Auth/signin')
 
         else:
             # show the django message "password didn't matched"
             messages.error(request, "Password didn't match")
-            return redirect('Auth/signup')
+            return redirect('/Auth/signup')
 
     else:
         return render(request, 'signuppage.html')

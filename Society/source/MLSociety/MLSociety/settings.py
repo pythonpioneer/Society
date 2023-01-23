@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-$9_8crt&!bknk_fx=e#odu-d4yl3lw1a^podoe72vd-snx2t3h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pythonpioneer.com', 'pythonpioneer.in', '127.0.0.1']
 
 
 # Application definition
@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     # added manually
-    'Home',
-    'Auths',
+    'Home.apps.HomeConfig',
+    'Auths.apps.AuthsConfig',
 ]
 
 MIDDLEWARE = [

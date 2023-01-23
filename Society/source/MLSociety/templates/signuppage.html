@@ -245,25 +245,23 @@ button:hover{
                 <Div Class="Form">
                     <H2>Sign Up Form</H2>
                     <Form action="signup" method="post">
+                        {% csrf_token %}
                         <Div Class="Input__box">
-                            <Input Type="Text" Placeholder="Email" />
+                            <Input Type="Text" Placeholder="Email" name="email" />
                         </Div>
                         <Div Class="Input__box">
-                            <Input Type="Text" Placeholder="Name" />
+                            <Input Type="Text" Placeholder="Name" name="name"/>
                         </Div>
                         <Div Class="Input__box">
-                            <Input Type="Password" Placeholder="Password" />
+                            <Input Type="Password" Placeholder="Password" name="password"/>
                         </Div>
                         <Div Class="Input__box">
-                            <Input Type="Password" Placeholder="Confirm Password" />
+                            <Input Type="Password" Placeholder="Confirm Password" name="confirm_password"/>
                         </Div>
                         <Div Class="login">
-                            <button><b>Sign Up</b></button>
+                            <button type="Submit"><b>Sign Up</b></button>
                         </Div>
                         <div>
-                        {% comment %} <P Class="Forget">
-                            Forgot Password? <A Href="#">Click Here</A>
-                        </P> {% endcomment %}
                         <P Class="Forget">
                             Do You Have An Account? <A Href="signin">Log in</A>
                         </P>

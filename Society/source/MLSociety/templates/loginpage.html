@@ -243,13 +243,27 @@ button:hover{
             <Div Class="Square" Style="--I: 4"></Div>
             <Div Class="Container">
                 <Div Class="Form">
+
+                    {% comment %} showing alert messages {% endcomment %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert" style="color: red; margin: 0px;">
+                                {{ message }}
+                                <button onclick="document.location='/Auth/signin'" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" action="/home">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div> 
+                        {% endfor %}
+                    {% endif %} 
+
                     <H2>Login Form</H2>
-                    <Form>
+                    <Form action="signin" method="post">
+                        {% csrf_token %}
                         <Div Class="Input__box">
-                            <Input Type="Text" Placeholder="Email" />
+                            <Input Type="Text" Placeholder="Email" name="email"/>
                         </Div>
                         <Div Class="Input__box">
-                            <Input Type="Password" Placeholder="Password" />
+                            <Input Type="Password" Placeholder="Password" name="password"/>
                         </Div>
                         <Div Class="login">
                             <button><b>Log in</b></button>
@@ -268,6 +282,6 @@ button:hover{
         </Div>
     </Section>
 </body>
-                        <script src="app.js"></script>
-                        <script src="particles.js"></script>
+                        <script src="/static/js/app.js"></script>
+                        <script src="/static/js/particles.js"></script>
 </html>

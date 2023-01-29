@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # added manually
     'Home.apps.HomeConfig',
     'Auths.apps.AuthsConfig',
+    'Solutions.apps.SolutionsConfig',
 ]
 
 MIDDLEWARE = [

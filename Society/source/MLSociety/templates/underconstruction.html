@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://css.gg/search.css' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel='stylesheet'>
+    <title>Under Construction</title>
+    <style>
+        *{
+             margin: 0;
+             padding: 0;
+        }
+        #particles-js{
+            background:linear-gradient(rgba(0, 0, 0, 1),rgb(19, 1, 59));
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh; 
+            width:100%;
+            overflow:hidden;   
+            background-position: 70% 30%;
+        }
+        header{
+            /* background:linear-gradient(rgb(19, 1, 59),rgba(0, 0, 0, 0.65)); */
+        }
+        .nbar{ 
+            position:relative;
+            left: 600px;
+            top: 60px;
+            display:inline-block;
+            height: 100px;
+        }
+        
+        .nbar li{
+            list-style: none;
+            float: left;
+            margin: 10px;
+            font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+            font-size: 10px;
+        }
+        .nbar ul{
+            overflow: auto;
+            margin: 0px 0px;
+        }
+        .nbar li a{
+            padding: 3px;
+            text-decoration: none;
+            color: aliceblue;
+            font-size: 20px;
+        }
+        .nbar li a:hover{
+            color:#DCA600;
+        }
+        .login{
+            display: inline-block;
+            float: right;
+        }
+        button{
+            float: right;
+            height: 35px;
+            width: 90px;
+            margin: 60px 80px 0 0;
+            background-color: rgba(0, 0, 0, 0.838);
+            color:aliceblue;
+            padding: 5px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            outline: none;
+            border: 2px solid white;
+            border-radius: 7px;
+            font-size: 17px;
+        }
+        button>a{
+            text-decoration: none;
+            color: aliceblue;
+            margin: 0;
+        }
+        button>a:hover{
+            color:rgb(95, 63, 164);
+        }
+
+        h1{
+            position: absolute;
+            top: 300px;
+            left: 60px;
+        }
+        #liner{
+            color: rgb(255, 255, 255);
+            font-size: 50px;
+            font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+            font-weight: 100;
+        }
+            
+            </style>
+</head>
+<body>
+    
+    <div id="particles-js">
+        <header>
+            <nav class="nbar"> 
+                <ul>
+                    <li><a href="Solution/">Solution</a></li>
+                    <li><a href="h.com">Vision</a></li>
+                    <li><a href="s.com">Services</a></li>
+                    <li><a href="r.com">Programs</a></li>
+                    <li><a href="h.com">Blogs</a></li>
+                    <li><a href="us">About Us</a></li>
+                </ul>
+            </nav>
+            <div class="login">
+            <button><a href="/Auth/signin"><i class="fa-solid fa-user"></i> Log in</a></button>
+            
+            </div>
+        </header>
+        <h1 id="liner">Artificial Intelligence<br> The new Era <br></h1>
+    </div>
+        <script src="/static/js/particles.js"></script>
+        <script src="/static/js/app.js"></script>
+</body>
+</html>

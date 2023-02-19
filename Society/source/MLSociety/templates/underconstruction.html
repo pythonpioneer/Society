@@ -9,8 +9,9 @@
     <title>Under Construction</title>
     <style>
         *{
-             margin: 0;
-             padding: 0;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         #particles-js{
             background:linear-gradient(rgba(0, 0, 0, 1),rgb(19, 1, 59));
@@ -86,12 +87,56 @@
         }
         #liner{
             color: rgb(255, 255, 255);
+            margin-top: 70px;
             font-size: 50px;
             font-family: Copperplate, "Copperplate Gothic Light", fantasy;
             font-weight: 100;
         }
+
+        /* adding coundown timer in the page */
+        #count-text{
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+            font-weight: 100;
+        }
+        .countdown{
+            width: 100vw;
+            height: 100vh;
+            padding: 0 8%;
+            position: relative;
+        }
+        .content{
+            top: 50%;
+            position: absolute;
+            transform: translateY(-50%);
+            margin-left: 30px;
+            margin-top: -20px;
+        }
+        .launching-time{
+            display: flex;
+            margin-left: 25vw;
+        }
+        .launching-time div{
+            flex-basis: 100px;
+            margin-left: 50px;
+        }
+        .launching-time div p{
+            font-size: 50px;
+            margin-bottom: -5px;
+        }
+        {% comment %} .time{
+            margin-left: -10px;
+        } {% endcomment %}
+        #minutes{
+            margin-left: 0px;
+        }
+        #seconds{
+            margin-left: 0px;
+        }
+        
             
-            </style>
+    </style>
 </head>
 <body>
     
@@ -107,28 +152,76 @@
                     <li><a href="us">About Us</a></li>
                 </ul>
             </nav>
+
             <div class="login">
-            <button><a href="/Auth/signin"><i class="fa-solid fa-user"></i> Log in</a></button>
-            
+                <button><a href="/Auth/signin"><i class="fa-solid fa-user"></i> Log in</a></button>
             </div>
         </header>
 
-        <h1 id="liner">We are working on something awesome.<br> Stay Tune <br></h1>
-
         <!-- adding for under Construction countdown -->
-        <div id="countdown">
-            <div id="timer">
-                <span id="days"></span>
-                <span id="hours"></span>
-                <span id="minutes"></span>
-                <span id="seconds"></span>
-            </div>
-            <div id="countdown-text">
-                <p>Countdown to the New Year</p>
+        <div class="coundown">
+            <div class="content">
+                <h2 id="liner">We are working on something awesome.<br> Stay Tune! <br></h2>
+
+                <div class="launching-time" id="count-text">
+                    <div class=>
+                        <p id="days" class="time">Pyth</p>
+                        <span id="after-days">Days</span>
+                    </div>
+                    <div>
+                        <p id="hours" class="time">on</p>
+                        <span id="after-hours">Hours</span>
+                    </div>
+                    <div>
+                        <p id="minutes" class="time">Pio</p>
+                        <span id="after-minutes">Minutes</span>
+                    </div>
+                    <div>
+                        <p id="seconds" class="time">neer</p>
+                        <span id="after-seconds">Seconds</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
         <script src="/static/js/particles.js"></script>
         <script src="/static/js/app.js"></script>
+
+        {% comment %} /* Now adding countdown to the page */ {% endcomment %}
+        <script>
+            var countDownDate = new Date("July 15, 2023 13:42:40").getTime();
+            var x = setInterval(function(){
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+
+                // Calculate the days, hours, minutes and seconds left
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // now access all the id from the html and replace them with appropriate time
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
+
+                // what happen if countdown ended it will display Python Pioneer
+                if(distance < 0){
+                    clearInterval(x);
+                    document.getElementById("days").innerHTML = "Pyth";
+                    document.getElementById("hours").innerHTML = "on";
+                    document.getElementById("minutes").innerHTML = "Pio";
+                    document.getElementById("seconds").innerHTML = "neer";
+
+                    // remove the days, hours, minutes and seconds texts after distance < 0;
+                    document.getElementById("after-days").innerHTML = "Under";
+                    document.getElementById("after-hours").innerHTML = "Con";
+                    document.getElementById("after-minutes").innerHTML = "struct";
+                    document.getElementById("after-seconds").innerHTML = "ion";
+                }
+
+            }, 1000);
+        </script>
 </body>
 </html>

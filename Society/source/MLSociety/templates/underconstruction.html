@@ -166,19 +166,19 @@
                 <div class="launching-time" id="count-text">
                     <div class=>
                         <p id="days" class="time">Pyth</p>
-                        <span id="after-days">Days</span>
+                        <span id="after-days">Under</span>
                     </div>
                     <div>
                         <p id="hours" class="time">on</p>
-                        <span id="after-hours">Hours</span>
+                        <span id="after-hours">Con</span>
                     </div>
                     <div>
                         <p id="minutes" class="time">Pio</p>
-                        <span id="after-minutes">Minutes</span>
+                        <span id="after-minutes">struct</span>
                     </div>
                     <div>
                         <p id="seconds" class="time">neer</p>
-                        <span id="after-seconds">Seconds</span>
+                        <span id="after-seconds">ion</span>
                     </div>
                 </div>
             </div>
@@ -205,6 +205,12 @@
                 document.getElementById("hours").innerHTML = hours;
                 document.getElementById("minutes").innerHTML = minutes;
                 document.getElementById("seconds").innerHTML = seconds;
+
+                // display desc of every section
+                document.getElementById("after-days").innerHTML = "Days";
+                document.getElementById("after-hours").innerHTML = "Hours";
+                document.getElementById("after-minutes").innerHTML = "Minutes";
+                document.getElementById("after-seconds").innerHTML = "Seconds";
 
                 // what happen if countdown ended it will display Python Pioneer
                 if(distance < 0){

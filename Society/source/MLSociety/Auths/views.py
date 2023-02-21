@@ -20,7 +20,11 @@ def signin_page(request):
         if user is not None:
             # successfully authenticated
             login(request, user)
-            return HttpResponse("Authenticated Successfully!")
+            # return HttpResponse("Authenticated Successfully!")
+
+            # here, we are adding profile page after login
+            # return render(request, "profilepage.html")
+            return redirect('/Auth/profile')
         else:
             # failed
             messages.error(request, "Authentication Failed")
@@ -82,4 +86,8 @@ def signup_page(request):
 def logout_page(request):
     logout(request)
     return HttpResponse('Logged out successfully!')
+
+# profile page, comes after login
+def profile_page(request):
+    return render(request, 'profilepage.html')
     

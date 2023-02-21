@@ -22,5 +22,6 @@ urlpatterns = [
     path('home', include('Home.urls')),
     path('Auth/', include('Auths.urls')),
     path('about/', include('Home.urls')),
-    path('Solution/', include('Solutions.urls'))
+    path('Solution/', include('Solutions.urls')),
+    path('pythonpioneer/', include('Home.urls')),
 ]

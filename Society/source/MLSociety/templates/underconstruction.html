@@ -134,6 +134,9 @@
         #seconds{
             margin-left: 0px;
         }
+        .logout{
+            width: 110px;
+        }
         
             
     </style>
@@ -144,17 +147,22 @@
         <header>
             <nav class="nbar"> 
                 <ul>
-                    <li><a href="Solution/">Solution</a></li>
-                    <li><a href="h.com">Vision</a></li>
-                    <li><a href="s.com">Services</a></li>
-                    <li><a href="r.com">Programs</a></li>
-                    <li><a href="h.com">Blogs</a></li>
-                    <li><a href="us">About Us</a></li>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/pythonpioneer/underconstruction">Solution</a></li>
+                    <li><a href="/pythonpioneer/underconstruction">Vision</a></li>
+                    <li><a href="/pythonpioneer/underconstruction">Services</a></li>
+                    <li><a href="/pythonpioneer/underconstruction">Programs</a></li>
+                    <li><a href="/pythonpioneer/underconstruction">Blogs</a></li>
+                    <li><a href="/pythonpioneer/underconstruction">About Us</a></li>
                 </ul>
             </nav>
 
             <div class="login">
+                {% if user.is_authenticated %}
+                <button class="logout"><a href="/Auth/signout"><i class="fa-solid fa-user"></i> Log out</a></button>
+                {% else %}
                 <button><a href="/Auth/signin"><i class="fa-solid fa-user"></i> Log in</a></button>
+                {% endif %}
             </div>
         </header>
 

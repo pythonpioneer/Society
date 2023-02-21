@@ -85,7 +85,7 @@ def signup_page(request):
 # creating a function for logout user
 def logout_page(request):
     logout(request)
-    return HttpResponse('Logged out successfully!')
+    return render(request, 'homepage.html')
 
 # profile page, comes after login
 def profile_page(request):

@@ -90,6 +90,9 @@
             font-family: Copperplate, "Copperplate Gothic Light", fantasy;
             font-weight: 100;
         }
+        .logout{
+            width: 110px;
+        }
             
             </style>
 </head>
@@ -99,22 +102,26 @@
         <header>
             <nav class="nbar"> 
                 <ul>
-                    <li><a href="Solution/">Solution</a></li>
-                    <li><a href="h.com">Vision</a></li>
-                    <li><a href="s.com">Services</a></li>
-                    <li><a href="r.com">Programs</a></li>
-                    <li><a href="h.com">Blogs</a></li>
-                    <li><a href="about/us">About Us</a></li>
+                    <li><a href="/pythonpioneer/underconstruction">Solution</a></li>
+                    <li><a href="/pythonpioneer/underconstruction">Vision</a></li>
+                    <li><a href="/pythonpioneer/underconstruction">Services</a></li>
+                    <li><a href="/pythonpioneer/underconstruction">Programs</a></li>
+                    <li><a href="/pythonpioneer/underconstruction">Blogs</a></li>
+                    <li><a href="/pythonpioneer/underconstruction">About Us</a></li>
                 </ul>
             </nav>
             <div class="login">
-            <button><a href="Auth/signin"><i class="fa-solid fa-user"></i> Log in</a></button>
+                {% if user.is_authenticated %}
+                <button class="logout"><a href="/Auth/signout"><i class="fa-solid fa-user"></i> Log out</a></button>
+                {% else %}
+                <button><a href="/Auth/signin"><i class="fa-solid fa-user"></i> Log in</a></button>
+                {% endif%}
             
             </div>
         </header>
         <h1 id="liner">Artificial Intelligence<br> The new Era <br></h1>
     </div>
-        <script src="static/js/particles.js"></script>
-        <script src="static/js/app.js"></script>
+        <script src="/static/js/particles.js"></script>
+        <script src="/static/js/app.js"></script>
 </body>
 </html>

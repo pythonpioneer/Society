@@ -102,6 +102,9 @@
         <header>
             <nav class="nbar"> 
                 <ul>
+                    {% if user.is_authenticated %}
+                    <li><a href="/Auth/profile">Profile</a></li>
+                    {% endif %}
                     <li><a href="/pythonpioneer/underconstruction">Solution</a></li>
                     <li><a href="/pythonpioneer/underconstruction">Vision</a></li>
                     <li><a href="/pythonpioneer/underconstruction">Services</a></li>

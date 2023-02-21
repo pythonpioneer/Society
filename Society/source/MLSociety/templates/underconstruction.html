@@ -27,7 +27,11 @@
         }
         .nbar{ 
             position:relative;
-            left: 600px;
+            {% if user.is_authenticated %}
+                left: 500px;
+            {% else %}
+                left: 600px;
+            {% endif %}
             top: 60px;
             display:inline-block;
             height: 100px;
@@ -148,6 +152,9 @@
             <nav class="nbar"> 
                 <ul>
                     <li><a href="/home">Home</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="/Auth/profile">Profile</a></li>
+                    {% endif %}
                     <li><a href="/pythonpioneer/underconstruction">Solution</a></li>
                     <li><a href="/pythonpioneer/underconstruction">Vision</a></li>
                     <li><a href="/pythonpioneer/underconstruction">Services</a></li>

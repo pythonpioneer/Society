@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from Auths.models import Member
 from django.contrib.auth import authenticate, logout, login
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 # giving login authorization
@@ -88,6 +89,7 @@ def logout_page(request):
     return render(request, 'homepage.html')
 
 # profile page, comes after login
+@login_required
 def profile_page(request):
     return render(request, 'profilepage.html')
     

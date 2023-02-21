@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://css.gg/search.css' rel='stylesheet'>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel='stylesheet'>
-    <title>Home</title>
+    <title>Profile</title>
     <style>
         *{
              margin: 0;
@@ -86,12 +86,31 @@
         }
         #liner{
             color: rgb(255, 255, 255);
-            font-size: 50px;
+            font-size: 30px;
             font-family: Copperplate, "Copperplate Gothic Light", fantasy;
             font-weight: 100;
         }
         .logout{
             width: 110px;
+        }
+        .avatar-size{
+            margin-left: -1200px;
+            margin-top: 200px;
+            width: 200px;
+            height 250px;
+        }
+        .username{
+            margin: 10px;
+            margin-top: 10px;
+            margin-left: -1200px;
+            box-shadow: 2px 2px 10px rgb(19, 1, 59);
+            width: 200px;
+        }
+        .image img{
+            box-shadow: 2px 2px 10px rgb(19, 1, 59);
+        }
+        #avatar-position{
+            margin-top: -40px;
         }
             
     </style>
@@ -112,12 +131,23 @@
                 </ul>
             </nav>
             <div class="login">
-            {% if user.is_authenticated %}
-            <button class="logout"><a href="/Auth/signout"><i class="fa-solid fa-user"></i> Log out</a></button>
-            {% else %}
-            <button><a href="/Auth/signin"><i class="fa-solid fa-user"></i> Log in</a></button>
-            {% endif %}
-            
+                {% if user.is_authenticated %}
+                <button class="logout"><a href="/Auth/signout"><i class="fa-solid fa-user"></i> Log out</a></button>
+                {% else %}
+                <button><a href="/Auth/signin"><i class="fa-solid fa-user"></i> Log in</a></button>
+                {% endif %}
+
+                <!-- here, we need to show the profile picture if user is logged in -->
+                <!-- add jinja syntax after the page is completed -->
+                <div id="avatar-position">
+                    <div class="image">
+                        <img class="avatar-size" src="/static/img/garima-avatar.jpeg" alt="Avatar"></img>
+                    </div>
+                    <div class="username" id="liner">
+                        Hello, User!
+                    </div>
+                </div>
+                
             </div>
         </header>
         
